@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React Native API | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native API">
+<meta property="og:url" content="http://luuman.github.io/2016/12/27/FrontFrame/RNApi/index.html">
+<meta property="og:site_name" content="Luuman's Blog">
+<meta property="og:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta property="og:updated_time" content="2016-11-03T02:43:52.335Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native API">
+<meta name="twitter:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 15px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 17.5px;">ReactNative</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://dongshuyan.top/">莫与</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-FrontFrame/RNApi" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/27/FrontFrame/RNApi/" class="article-date">
+      <time datetime="2016-12-27T10:29:00.000Z" itemprop="datePublished">2016-12-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React Native API
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/FrontFrame/">FrontFrame</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>自用笔记：</strong>本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why<br><a id="more"></a></p>
+<h2 id="AppRegistry"><a href="#AppRegistry" class="headerlink" title="AppRegistry"></a>AppRegistry</h2><p>AppRegistry模式是React Native中最基本的模块，也是最常用的模块。<br>AppRegistry模块是React Native应用JavaScript运行的入口。应用的跟组件应用使用AppRegistry.registerComponent进行注册自己。然后原生系统就可以进行加载运行bundle文件包，最后就会可以调用AppRegistry.runApplication进行运行起来应用。<br>当一个视图被摧毁的时候，为了结束应用可以调用AppRegistry.unmountApplictionComponentAtRootTag方法。其中该方法中的参数和runApplication中的要一样，该规则一定要遵守哦~</p>
+<p>注：AppRegister模块需要在其他模块导入之前尽可能早点被导入进来来让JS环境可以正常运行。</p>
+<h3 id="u5C5E_u6027_u65B9_u6CD5"><a href="#u5C5E_u6027_u65B9_u6CD5" class="headerlink" title="属性方法"></a>属性方法</h3><h4 id="registerConfig_28config_3AArray_29_static__u9759_u6001_u65B9_u6CD5_2C__u8FDB_u884C_u6CE8_u518C_u914D_u7F6E_u4FE1_u606F"><a href="#registerConfig_28config_3AArray_29_static__u9759_u6001_u65B9_u6CD5_2C__u8FDB_u884C_u6CE8_u518C_u914D_u7F6E_u4FE1_u606F" class="headerlink" title="registerConfig(config:Array)  static 静态方法, 进行注册配置信息"></a>registerConfig(config:Array<appconfig>)  static 静态方法, 进行注册配置信息</appconfig></h4><h4 id="registerComponent_28appKey_3Astring_2CgetComponentFunc_3AComponentProvider_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u8FDB_u884C_u6CE8_u518C_u7EC4_u4EF6"><a href="#registerComponent_28appKey_3Astring_2CgetComponentFunc_3AComponentProvider_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u8FDB_u884C_u6CE8_u518C_u7EC4_u4EF6" class="headerlink" title="registerComponent(appKey:string,getComponentFunc:ComponentProvider)  static静态方法，进行注册组件"></a>registerComponent(appKey:string,getComponentFunc:ComponentProvider)  static静态方法，进行注册组件</h4><figure class="highlight coffeescript" data-lang=" coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AppRegistry.registerComponent(<span class="string">'luumans'</span>, <span class="function"><span class="params">()</span> =&gt;</span> luumans);</span><br></pre></td></tr></table></figure>
+<h4 id="registerRunnable_28appKey_3Astring_2Cfunc_3AFunction_29_static_u9759_u6001_u65B9_u6CD5__uFF0C_u8FDB_u884C_u6CE8_u518C_u7EBF_u7A0B"><a href="#registerRunnable_28appKey_3Astring_2Cfunc_3AFunction_29_static_u9759_u6001_u65B9_u6CD5__uFF0C_u8FDB_u884C_u6CE8_u518C_u7EBF_u7A0B" class="headerlink" title="registerRunnable(appKey:string,func:Function)  static静态方法 ，进行注册线程"></a>registerRunnable(appKey:string,func:Function)  static静态方法 ，进行注册线程</h4><figure class="highlight javascript" data-lang=" javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AppRegistry.registerRunnable(<span class="string">'wxs'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'was'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">alert(AppRegistry.getAppKeys());</span><br></pre></td></tr></table></figure>
+<h4 id="registerAppKeys_28_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u8FDB_u884C_u83B7_u53D6_u6240_u6709_u7EC4_u4EF6_u7684keys_u503C"><a href="#registerAppKeys_28_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u8FDB_u884C_u83B7_u53D6_u6240_u6709_u7EC4_u4EF6_u7684keys_u503C" class="headerlink" title="registerAppKeys()  static静态方法，进行获取所有组件的keys值"></a>registerAppKeys()  static静态方法，进行获取所有组件的keys值</h4><h4 id="runApplication_28appKey_3Astring_2CappParameters_3Aany_29_static_u9759_u6001_u65B9_u6CD5_2C__u8FDB_u884C_u8FD0_u884C_u5E94_u7528"><a href="#runApplication_28appKey_3Astring_2CappParameters_3Aany_29_static_u9759_u6001_u65B9_u6CD5_2C__u8FDB_u884C_u8FD0_u884C_u5E94_u7528" class="headerlink" title="runApplication(appKey:string,appParameters:any)  static静态方法, 进行运行应用"></a>runApplication(appKey:string,appParameters:any)  static静态方法, 进行运行应用</h4><h4 id="unmountApplicationComponentAtRootTag_28_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u7ED3_u675F_u5E94_u7528"><a href="#unmountApplicationComponentAtRootTag_28_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u7ED3_u675F_u5E94_u7528" class="headerlink" title="unmountApplicationComponentAtRootTag()  static静态方法，结束应用"></a>unmountApplicationComponentAtRootTag()  static静态方法，结束应用</h4><h2 id="PixelRatio"><a href="#PixelRatio" class="headerlink" title="PixelRatio"></a>PixelRatio</h2><p>PixelRatio类提供了访问设备的像素密度的方法。</p>
+<h3 id="u4F7F_u7528_u60C5_u666F"><a href="#u4F7F_u7528_u60C5_u666F" class="headerlink" title="使用情景"></a>使用情景</h3><figure class="highlight xml" data-lang=" xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">'use strict';</span><br><span class="line">import React, &#123; Component &#125; from 'react';</span><br><span class="line">import &#123;</span><br><span class="line">  AppRegistry,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  PixelRatio,</span><br><span class="line">  View,</span><br><span class="line">&#125; from 'react-native';</span><br><span class="line"></span><br><span class="line">class luumans extends Component &#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    return (</span><br><span class="line">      <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span>=<span class="value">&#123;styles.flexs&#125;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span>=<span class="value">&#123;styles.container&#125;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span> = &#123;[<span class="attribute">styles.item</span>,<span class="attribute">styles.center</span>]&#125;&gt;</span><span class="tag">&lt;<span class="title">Text</span> <span class="attribute">style</span>=<span class="value">&#123;styles.title&#125;</span>&gt;</span>酒店<span class="tag">&lt;/<span class="title">Text</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span> = &#123;[<span class="attribute">styles.item</span>,<span class="attribute">styles.lineLeftRight</span>]&#125;&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span>=<span class="value">&#123;[styles.flexs,styles.center,styles.lineCenter]&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">Text</span> <span class="attribute">style</span>=<span class="value">&#123;styles.title&#125;</span>&gt;</span>海外酒店<span class="tag">&lt;/<span class="title">Text</span>&gt;</span><span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span>=<span class="value">&#123;[styles.flexs,styles.center]&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">Text</span> <span class="attribute">style</span>=<span class="value">&#123;styles.title&#125;</span>&gt;</span>特色酒店<span class="tag">&lt;/<span class="title">Text</span>&gt;</span><span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span> = &#123;<span class="attribute">styles.item</span>&#125;&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span>=<span class="value">&#123;[styles.flexs,styles.center,styles.lineCenter]&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">Text</span> <span class="attribute">style</span>=<span class="value">&#123;styles.title&#125;</span>&gt;</span>团购<span class="tag">&lt;/<span class="title">Text</span>&gt;</span><span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">View</span> <span class="attribute">style</span>=<span class="value">&#123;[styles.flexs,styles.center]&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">Text</span> <span class="attribute">style</span>=<span class="value">&#123;styles.title&#125;</span>&gt;</span>客栈、公寓<span class="tag">&lt;/<span class="title">Text</span>&gt;</span><span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">View</span>&gt;</span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container:&#123;</span><br><span class="line">    flexDirection: 'row',</span><br><span class="line">    height: 80,</span><br><span class="line">    borderRadius: 5,</span><br><span class="line">    marginTop: 200,</span><br><span class="line">    marginLeft: 5,</span><br><span class="line">    marginRight: 5,</span><br><span class="line">    backgroundColor: '#FF0067',</span><br><span class="line">  &#125;,</span><br><span class="line">  item:&#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    height: 80,</span><br><span class="line">  &#125;,</span><br><span class="line">  title:&#123;</span><br><span class="line">    fontSize: 16,</span><br><span class="line">    fontWeight: 'bold',</span><br><span class="line">    color: '#FFF',</span><br><span class="line">  &#125;,</span><br><span class="line">  center:&#123;</span><br><span class="line">    justifyContent: 'center',</span><br><span class="line">    alignItems: 'center',</span><br><span class="line">  &#125;,</span><br><span class="line">  flexs:&#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">  &#125;,</span><br><span class="line">  lineCenter: &#123;</span><br><span class="line">    borderBottomWidth: 1/PixelRatio.get(),</span><br><span class="line">    borderColor: '#FFF',</span><br><span class="line">  &#125;,</span><br><span class="line">  lineLeftRight: &#123;</span><br><span class="line">    borderLeftWidth: 1/PixelRatio.get(),</span><br><span class="line">    borderRightWidth: 1/PixelRatio.get(),</span><br><span class="line">    borderColor: '#FFF',</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent('luumans', () =&gt; luumans);</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal" data-lang=" crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var image = getImage(&#123;</span><br><span class="line">  <span class="symbol">width:</span> <span class="constant">PixelRatio</span>.getPixelSizeForLayoutSize(<span class="number">200</span>),</span><br><span class="line">  <span class="symbol">height:</span> <span class="constant">PixelRatio</span>.getPixelSizeForLayoutSize(<span class="number">100</span>),</span><br><span class="line">&#125;);</span><br><span class="line">&lt;<span class="constant">Image</span> source=&#123;image&#125; style=<span class="expansion">&#123;&#123;<span class="symbol">width:</span> <span class="number">200</span>, <span class="symbol">height:</span> <span class="number">100</span>&#125;&#125;</span> /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal" data-lang=" crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'use strict'</span>;</span><br><span class="line">import <span class="constant">React</span>, &#123; <span class="constant">Component</span> &#125; from <span class="string">'react'</span>;</span><br><span class="line">import &#123;</span><br><span class="line">  <span class="constant">AppRegistry</span>,</span><br><span class="line">  <span class="constant">StyleSheet</span>,</span><br><span class="line">  <span class="constant">Text</span>,</span><br><span class="line">  <span class="constant">PixelRatio</span>,</span><br><span class="line">  <span class="constant">Image</span>,</span><br><span class="line">  <span class="constant">View</span>,</span><br><span class="line">&#125; from <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">luumans</span> <span class="title">extends</span> <span class="title">Component</span> &#123;</span></span><br><span class="line">  render()&#123;</span><br><span class="line">    var image = (&#123;</span><br><span class="line">      <span class="symbol">uri:</span> <span class="string">'http://placehold.it/'</span>+ <span class="number">160</span> * <span class="constant">PixelRatio</span>.get() +<span class="string">'x'</span> + <span class="number">100</span> * <span class="constant">PixelRatio</span>.get()</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;<span class="constant">View</span>&gt;</span><br><span class="line">        &lt;<span class="constant">Image</span> source=<span class="expansion">&#123;&#123;<span class="symbol">uri:</span> <span class="string">'http://placehold.it/640x300'</span>&#125;&#125;</span> style=<span class="expansion">&#123;&#123;<span class="symbol">height:</span> <span class="number">100</span> * <span class="constant">PixelRatio</span>.get()&#125;&#125;</span> /&gt;</span><br><span class="line">        &lt;<span class="constant">Image</span> source=&#123;image&#125; style=<span class="expansion">&#123;&#123;<span class="symbol">height:</span> <span class="number">100</span> * <span class="constant">PixelRatio</span>.get()&#125;&#125;</span> /&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent('luumans', () =&gt; luumans);</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5C5E_u6027_u65B9_u6CD5-1"><a href="#u5C5E_u6027_u65B9_u6CD5-1" class="headerlink" title="属性方法"></a>属性方法</h3><h4 id="get_28_29__u8FD4_u56DE_u8BBE_u5907_u7684_u50CF_u7D20_u5BC6_u5EA6"><a href="#get_28_29__u8FD4_u56DE_u8BBE_u5907_u7684_u50CF_u7D20_u5BC6_u5EA6" class="headerlink" title="get() 返回设备的像素密度"></a>get() 返回设备的像素密度</h4><figure class="highlight cpp" data-lang=" cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">PixelRatio.get() === <span class="number">1</span></span><br><span class="line">	mdpi Android 设备 (<span class="number">160</span> dpi)</span><br><span class="line">PixelRatio.get() === <span class="number">1.5</span></span><br><span class="line">	hdpi Android 设备 (<span class="number">240</span> dpi)</span><br><span class="line">PixelRatio.get() === <span class="number">2</span></span><br><span class="line">	iPhone <span class="number">4</span>, <span class="number">4</span>S</span><br><span class="line">	iPhone <span class="number">5</span>, <span class="number">5</span>c, <span class="number">5</span>s</span><br><span class="line">	iPhone <span class="number">6</span></span><br><span class="line">	xhdpi Android 设备 (<span class="number">320</span> dpi)</span><br><span class="line">PixelRatio.get() === <span class="number">3</span></span><br><span class="line">	iPhone <span class="number">6</span> plus</span><br><span class="line">	xxhdpi Android 设备 (<span class="number">480</span> dpi)</span><br><span class="line">PixelRatio.get() === <span class="number">3.5</span></span><br><span class="line">	Nexus <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<h4 id="getFontScale_28_29__u8FD4_u56DE_u5B57_u4F53_u5927_u5C0F_u7F29_u653E_u6BD4_u4F8B"><a href="#getFontScale_28_29__u8FD4_u56DE_u5B57_u4F53_u5927_u5C0F_u7F29_u653E_u6BD4_u4F8B" class="headerlink" title="getFontScale() 返回字体大小缩放比例"></a>getFontScale() 返回字体大小缩放比例</h4><h4 id="getPixelSizeForLayoutSize_28_29__u5C06_u4E00_u4E2A_u5E03_u5C40_u5C3A_u5BF8_28dp_29_u8F6C_u6362_u4E3A_u50CF_u7D20_u5C3A_u5BF8_28px_29"><a href="#getPixelSizeForLayoutSize_28_29__u5C06_u4E00_u4E2A_u5E03_u5C40_u5C3A_u5BF8_28dp_29_u8F6C_u6362_u4E3A_u50CF_u7D20_u5C3A_u5BF8_28px_29" class="headerlink" title="getPixelSizeForLayoutSize() 将一个布局尺寸(dp)转换为像素尺寸(px)"></a>getPixelSizeForLayoutSize() 将一个布局尺寸(dp)转换为像素尺寸(px)</h4><h4 id="startDetecting_28_29__u672C_u51FD_u6570_u5728_u79FB_u52A8_u8BBE_u5907_u4E0A_u6CA1_u6709_u4F5C_u7528_u3002"><a href="#startDetecting_28_29__u672C_u51FD_u6570_u5728_u79FB_u52A8_u8BBE_u5907_u4E0A_u6CA1_u6709_u4F5C_u7528_u3002" class="headerlink" title="startDetecting() 本函数在移动设备上没有作用。"></a>startDetecting() 本函数在移动设备上没有作用。</h4><p><a href="&quot;&quot;"></a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/27/FrontFrame/RNApi/">React Native API</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年12月27日 - 18时29分</p>
+        <p><span>最后更新:</span>2016年11月03日 - 10时43分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/27/FrontFrame/RNApi/" title="React Native API">http://luuman.github.io/2016/12/27/FrontFrame/RNApi/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/12/27/FrontFrame/RNApi/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/12/28/FrontFrame/RNTools/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          React Native开发工具
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/27/FrontFrame/RNComponents/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React Native 组件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AppRegistry"><span class="toc-number">1.</span> <span class="toc-text">AppRegistry</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u5C5E_u6027_u65B9_u6CD5"><span class="toc-number">1.1.</span> <span class="toc-text">属性方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#registerConfig_28config_3AArray_29_static__u9759_u6001_u65B9_u6CD5_2C__u8FDB_u884C_u6CE8_u518C_u914D_u7F6E_u4FE1_u606F"><span class="toc-number">1.1.1.</span> <span class="toc-text">registerConfig(config:Array)  static 静态方法, 进行注册配置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#registerComponent_28appKey_3Astring_2CgetComponentFunc_3AComponentProvider_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u8FDB_u884C_u6CE8_u518C_u7EC4_u4EF6"><span class="toc-number">1.1.2.</span> <span class="toc-text">registerComponent(appKey:string,getComponentFunc:ComponentProvider)  static静态方法，进行注册组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#registerRunnable_28appKey_3Astring_2Cfunc_3AFunction_29_static_u9759_u6001_u65B9_u6CD5__uFF0C_u8FDB_u884C_u6CE8_u518C_u7EBF_u7A0B"><span class="toc-number">1.1.3.</span> <span class="toc-text">registerRunnable(appKey:string,func:Function)  static静态方法 ，进行注册线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#registerAppKeys_28_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u8FDB_u884C_u83B7_u53D6_u6240_u6709_u7EC4_u4EF6_u7684keys_u503C"><span class="toc-number">1.1.4.</span> <span class="toc-text">registerAppKeys()  static静态方法，进行获取所有组件的keys值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#runApplication_28appKey_3Astring_2CappParameters_3Aany_29_static_u9759_u6001_u65B9_u6CD5_2C__u8FDB_u884C_u8FD0_u884C_u5E94_u7528"><span class="toc-number">1.1.5.</span> <span class="toc-text">runApplication(appKey:string,appParameters:any)  static静态方法, 进行运行应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unmountApplicationComponentAtRootTag_28_29_static_u9759_u6001_u65B9_u6CD5_uFF0C_u7ED3_u675F_u5E94_u7528"><span class="toc-number">1.1.6.</span> <span class="toc-text">unmountApplicationComponentAtRootTag()  static静态方法，结束应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PixelRatio"><span class="toc-number">2.</span> <span class="toc-text">PixelRatio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528_u60C5_u666F"><span class="toc-number">2.1.</span> <span class="toc-text">使用情景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5C5E_u6027_u65B9_u6CD5-1"><span class="toc-number">2.2.</span> <span class="toc-text">属性方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#get_28_29__u8FD4_u56DE_u8BBE_u5907_u7684_u50CF_u7D20_u5BC6_u5EA6"><span class="toc-number">2.2.1.</span> <span class="toc-text">get() 返回设备的像素密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getFontScale_28_29__u8FD4_u56DE_u5B57_u4F53_u5927_u5C0F_u7F29_u653E_u6BD4_u4F8B"><span class="toc-number">2.2.2.</span> <span class="toc-text">getFontScale() 返回字体大小缩放比例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getPixelSizeForLayoutSize_28_29__u5C06_u4E00_u4E2A_u5E03_u5C40_u5C3A_u5BF8_28dp_29_u8F6C_u6362_u4E3A_u50CF_u7D20_u5C3A_u5BF8_28px_29"><span class="toc-number">2.2.3.</span> <span class="toc-text">getPixelSizeForLayoutSize() 将一个布局尺寸(dp)转换为像素尺寸(px)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#startDetecting_28_29__u672C_u51FD_u6570_u5728_u79FB_u52A8_u8BBE_u5907_u4E0A_u6CA1_u6709_u4F5C_u7528_u3002"><span class="toc-number">2.2.4.</span> <span class="toc-text">startDetecting() 本函数在移动设备上没有作用。</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/12/27/FrontFrame/RNApi/" data-title="React Native API" data-url="http://luuman.github.io/2016/12/27/FrontFrame/RNApi/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luuman"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/12/28/FrontFrame/RNTools/" title="上一篇: React Native开发工具">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/12/27/FrontFrame/RNComponents/" title="下一篇: React Native 组件">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/12/28/FrontFrame/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/RNApi/">React Native API</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/Induce/CSS/overflowMore/">移动端设备显示限制，隐藏部分内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/Skill/WebFrontRule/">Web前端开发规范手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Tool/Git/">Git的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
